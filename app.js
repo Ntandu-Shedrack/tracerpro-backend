@@ -9,15 +9,15 @@ const mysql = require("mysql2/promise");
 const authRoutes = require("./routes/auth.routes");
 
 // Middleware
+app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
+    origin: "https://smscqhk3-3000.inc1.devtunnels.ms",
     credentials: true,
   })
 );
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
 // Root route
 app.get("/", (req, res) => {
